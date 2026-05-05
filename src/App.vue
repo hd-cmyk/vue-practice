@@ -4,7 +4,7 @@ import ReactivityPractice from "./components/ReactivityPractice.vue";
 import ComponentPractice from "./components/ComponentPractice.vue";
 import LifecyclePractice from "./components/LifecyclePractice.vue";
 import ComposablePractice from "./components/ComposablePractice.vue";
-
+const A = 1;
 const lessons = [
   {
     id: "reactivity",
