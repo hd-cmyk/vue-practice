@@ -1,0 +1,356 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #18212f;
+  background: #eef2f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(70, 145, 132, 0.14), transparent 32rem),
+    #eef2f7;
+}
+
+.theme-night {
+  color: #e9edf5;
+  background:
+    linear-gradient(135deg, rgba(77, 170, 153, 0.18), transparent 32rem),
+    #171c26;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  border-right: 1px solid rgba(65, 81, 105, 0.14);
+}
+
+.theme-night .sidebar {
+  background: rgba(25, 31, 42, 0.78);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #2d7a6f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: 2.2rem;
+  line-height: 1.05;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.intro,
+.muted,
+.lesson-header p {
+  color: #627083;
+  line-height: 1.7;
+}
+
+.theme-night .intro,
+.theme-night .muted,
+.theme-night .lesson-header p {
+  color: #aeb9c9;
+}
+
+.lesson-nav {
+  display: grid;
+  gap: 10px;
+}
+
+.lesson-nav button {
+  display: grid;
+  gap: 4px;
+  min-height: 68px;
+  padding: 14px;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 1px solid rgba(65, 81, 105, 0.16);
+  border-radius: 8px;
+}
+
+.lesson-nav button.active {
+  color: #ffffff;
+  background: #2d7a6f;
+  border-color: #2d7a6f;
+}
+
+.lesson-nav small {
+  color: #718094;
+}
+
+.lesson-nav button.active small {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-switch {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  font-weight: 700;
+}
+
+.theme-switch select,
+input {
+  width: 100%;
+  padding: 10px 12px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(65, 81, 105, 0.18);
+  border-radius: 8px;
+}
+
+.theme-night .theme-switch select,
+.theme-night input {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.lesson-panel {
+  padding: 40px;
+}
+
+.lesson-header {
+  margin-bottom: 24px;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.practice-card {
+  min-height: 220px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(65, 81, 105, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(39, 52, 70, 0.08);
+  outline: none;
+}
+
+.practice-card:focus {
+  border-color: #2d7a6f;
+  box-shadow: 0 0 0 4px rgba(45, 122, 111, 0.16);
+}
+
+.theme-night .practice-card {
+  background: rgba(31, 39, 53, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.counter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.counter-row strong {
+  display: grid;
+  place-items: center;
+  min-width: 58px;
+  height: 44px;
+  font-size: 1.6rem;
+}
+
+.counter-row button,
+.task-editor button,
+.practice-card > button {
+  min-height: 42px;
+  padding: 0 16px;
+  color: #fff;
+  background: #2d7a6f;
+  border-radius: 8px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.meter {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background: #d9e2ea;
+  border-radius: 999px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: #db6b4f;
+  transition: width 180ms ease;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(45, 122, 111, 0.1);
+  border-radius: 8px;
+}
+
+.log-list,
+.learning-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 22px;
+  line-height: 1.6;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+}
+
+.task-item,
+.task-editor {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-editor {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.check-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  background: #db6b4f;
+  border-radius: 8px;
+}
+
+.ghost-button {
+  min-height: 34px;
+  padding: 0 12px;
+  color: #2d7a6f;
+  background: rgba(45, 122, 111, 0.12);
+  border-radius: 8px;
+}
+
+.done {
+  color: #718094;
+  text-decoration: line-through;
+}
+
+.notice {
+  margin-top: 18px;
+  padding: 14px;
+  color: #7b3d2d;
+  background: rgba(219, 107, 79, 0.14);
+  border-radius: 8px;
+}
+
+.lesson-enter-active,
+.lesson-leave-active,
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.lesson-enter-from,
+.lesson-leave-to,
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@media (max-width: 820px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid rgba(65, 81, 105, 0.14);
+  }
+
+  .lesson-panel {
+    padding: 28px 18px;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
