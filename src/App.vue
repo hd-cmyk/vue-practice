@@ -1,43 +1,45 @@
 <script setup>
-import { computed, provide, ref } from 'vue'
-import ReactivityPractice from './components/ReactivityPractice.vue'
-import ComponentPractice from './components/ComponentPractice.vue'
-import LifecyclePractice from './components/LifecyclePractice.vue'
-import ComposablePractice from './components/ComposablePractice.vue'
+import { computed, provide, ref } from "vue";
+import ReactivityPractice from "./components/ReactivityPractice.vue";
+import ComponentPractice from "./components/ComponentPractice.vue";
+import LifecyclePractice from "./components/LifecyclePractice.vue";
+import ComposablePractice from "./components/ComposablePractice.vue";
 
 const lessons = [
   {
-    id: 'reactivity',
-    title: '响应式基础',
-    subtitle: 'ref / reactive / computed / watch',
+    id: "reactivity",
+    title: "响应式基础",
+    subtitle: "ref / reactive / computed / watch",
     component: ReactivityPractice,
   },
   {
-    id: 'components',
-    title: '组件通信',
-    subtitle: 'props / emit / v-model / provide',
+    id: "components",
+    title: "组件通信",
+    subtitle: "props / emit / v-model / provide",
     component: ComponentPractice,
   },
   {
-    id: 'lifecycle',
-    title: '生命周期',
-    subtitle: 'mounted / updated / unmounted',
+    id: "lifecycle",
+    title: "生命周期",
+    subtitle: "mounted / updated / unmounted",
     component: LifecyclePractice,
   },
   {
-    id: 'composables',
-    title: '组合式函数',
-    subtitle: '抽取可复用状态逻辑',
+    id: "composables",
+    title: "组合式函数",
+    subtitle: "抽取可复用状态逻辑",
     component: ComposablePractice,
   },
-]
+];
 
-const activeId = ref(lessons[0].id)
-const theme = ref('day')
+const activeId = ref(lessons[0].id);
+const theme = ref("day");
 
-const activeLesson = computed(() => lessons.find((lesson) => lesson.id === activeId.value))
+const activeLesson = computed(() =>
+  lessons.find((lesson) => lesson.id === activeId.value),
+);
 
-provide('labTheme', theme)
+provide("labTheme", theme);
 </script>
 
 <template>
